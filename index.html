@@ -116,175 +116,317 @@
             const prediction = await model.predict(image, false);
             prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
             console.log(prediction[0].className);
-            var resultMessage;
             switch(prediction[0].className){
                 case "abyssinian":
-                    resultMessage = "아비시니안"
-                    labelTitle = ""
+                    resultTitle = "개냥이 아비시니안"
+                    resultExplain = " 단모종이다. 귀엽고 아름답지만 지*묘에 개냥이로 잘 알려진 종이다. 물론 그럼에도 의외로 차분한 아비시니안도 많다. 이름을 굉장히 자주 틀리는 고양이다. 관련 정보 검색에 애로 사항이 꽃필 정도. 아비니시안, 아바시니안, 아바니시안 등 다양하지만 아비시니안이 정식 명칭이다. 성격은 민첩하며 예민하고, 특히 수컷보다 암컷이 더욱 예민한 편. 그래서 아비시니안 개체중 지랄묘는 암컷이 많다. 성격이 예민하기 때문에 사람의 목소리나 주인의 목소리에 잘 반응하는 편이다. 이름을 부르면 대답하거나 오는 경우도 있다. 활동적이어서 나무타기나 물놀이를 좋아한다. 목욕시킬 때 놀이라고 인식시켜 주면 그 다음부터는 지가 먼저 하자고 끌고가기도 한다."
+                    resultSource ="나무위키"
+                    resultSearch = "https://terms.naver.com/entry.naver?docId=1978752&cid=42884&categoryId=42884"
                     break;
                 case "american Bobtail":
-                    resultMessage = "아메리칸 밥테일"
-                    labelTitle = ""
+                resultTitle = "아메리칸 밥테일"
+                resultExplain = "1960년대 후반에 등장하기 시작한 미국이 원산지인 품종이다. 가장 뚜렷한 특징은 일반 고양이보다 1/3∼1/2정도 짧은 꼬리를 가진다는 점이다. 이 때문에 밥테일(bobed : 짧게 잘린)이라 불린다. 재패니즈밥테일과 외형과 이름이 유사하나 재패니즈밥테일과는 관련이 없다. 맹크스와 마찬가지로 짧은 꼬리는 우성 유전자에 의해 유전되는 특징이다. 국제고양이협회(TICA)에 1989년 등록된 이후 다양한 고양이 단체에 등록되었다. [네이버 지식백과] 아메리칸밥테일 [American bobtail] (두산백과)"
+                resultSource ="네이버 지식백과"
+                resultSearch = "https://terms.naver.com/entry.naver?docId=1319019&cid=40942&categoryId=32624"
                 break;
                 case "american curl":
-                    resultMessage = "아메리칸 컬"
-                    labelTitle = ""
+                resultTitle = "아메리칸 컬"
+                resultExplain = "비교적 최근에 알려진 품종으로 미국 캘리포니아가 원산으로 독특하게 뒤로 넘어가 있는 귀가 특징이다. 1981년 캘리포니아에서 루가(Ruga)가족에게 발견된 두 마리의 고양이 중 뒤쪽으로 접힌 귀를 가지고 있던 한 마리가 이 품종의 선조이다. '슐라미스(Sluamith)'라는 이름의 이 고양이는 이후 4마리의 새끼를 낳았고 그 중 2마리가 뒤쪽으로 말린 귀를 가지고 태어났다. 1983년 처음으로 전시되었으며 1985년에 국제고양이협회(TICA)에 등록되었다. [네이버 지식백과] 아메리칸컬 [American curl] (두산백과)"
+                resultSource ="네이버 지식백과"
+                resultSearch = "https://terms.naver.com/entry.naver?docId=1319018&cid=40942&categoryId=32624"
                     break;
                 case "american shorthair":
-                    resultMessage = "아메리칸 숏헤어"
-                    labelTitle = ""
+                resultTitle = "굵은 근육질 몸매 아메리칸 숏헤어"
+                resultExplain = "모든 고양이가 그렇듯 개체마다 성격이 다른데, 평균적으로 주인에 대한 호기심도 높고 애교가 굉장히 많음과 더불어 독점욕도 강한 고양이이다. 어릴 때부터 같이 지낸 사이가 아닌 고양이들에게 경계심이 높고 하악질도 초면에는 매우 잦을 것이다. 여러 마리를 키우는 경우 주인이 다른 고양이에게 신경을 더 쓰면 질투한다. 주인이 자기 할 일 하느라 신경 안써도 잘 삐친다. 주인이 없을때 외로움을 잘 타는 고양이다보니 두마리 키우거나 그게 힘들면 집에 있을때라도 최대한 자주 함께 놀아주는게 좋을듯."
+                resultSource ="나무위키"
+                resultSearch = "https://terms.naver.com/entry.naver?docId=1978749&cid=42884&categoryId=42884"
                     break;
                 case "american wirehair cat":
-                    resultMessage = "아메리칸 와이어헤어"
-                    labelTitle = ""
+                resultTitle = "장난끼 많은 아메리칸 와이어헤어"
+                resultExplain = "영리하고 활발하며 장난을 좋아한다. 독립심이 강하고 주인을 잘 따르나 다른 고양이들을 지배하려는 경향이 있다. 체력이 좋고 질병에 강한 편이다."
+                resultSource ="네이버 지식백과"
+                resultSearch = "https://terms.naver.com/entry.naver?docId=1319016&cid=40942&categoryId=32624"
                     break;
                 case "balinese cat":
-                    resultMessage = "발리니즈"
-                    labelTitle = ""
+                resultTitle = "발리니즈"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "bengal cat":
-                    resultMessage = "벵갈"
-                    labelTitle = ""
+                resultTitle = "벵갈"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "birman":
-                    resultMessage = "버만"
-                    labelTitle = ""
+                resultTitle = "버만"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "bombay cat":
-                    resultMessage = "봄베이 고양이"
-                    labelTitle = ""
+                resultTitle = "블랙펜서를 닮은 봄베이 고양이"
+                resultExplain = "성격이 차분하고 우호적이어서 아이들이나 다른 동물들과도 잘 지낸다. 머리가 좋은 편으로 어떤 환경에도 잘 적응하며 주인의 의향을 잘 알아차린다. 몸놀림이 민첩하고 재빠르다."
+                resultSource ="네이버 지식백과"
+                resultSearch = "https://terms.naver.com/entry.naver?docId=1319013&cid=40942&categoryId=32624"
                     break;
                 case "british shorthair":
-                    resultMessage = "브리티쉬 숏헤어"
-                    labelTitle = ""
+                resultTitle = "신사 같이 얌전한 브리티쉬 숏헤어"
+                    resultExplain = "조심스럽고 순한 성격으로, 조용하며 인내심이 강하다. 마치 신사처럼 개와 같은 다른 동물들을 먼저 배려하며 서로 평화롭게 지낸다. 때문에 문제를 일으키는 경우가 많지 않아 다른 동물과 기르거나 1인가구인 집에서 많이 기르는 편이다. 외형상으로 얼굴이 다른 종들보다 빵빵하고 둥근 것이 특징이다. 크고 둥근 눈을 통해 끊임없이 의사표현을 한다. 한편, 덩치가 큰 편이기 때문에 사람의 무릎에 앉아있기보다는 곁에 머물며 여유를 즐기는 것을 좋아한다. 조용하고 차분해서 병원에 데리고 가도 수의사를 공격하는 일이 드물고 주사도 얌전히 맞는 편이다."
+                    resultSource ="나무위키"
+                    resultSearch = "https://terms.naver.com/entry.naver?docId=1318999&cid=40942&categoryId=32624"
                     break;
                 case "burmese cat":
-                    resultMessage = "버미즈"
-                    labelTitle = ""
+                resultTitle = "버미즈"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "burmilla":
-                    resultMessage = "버밀라"
-                    labelTitle = ""
+                resultTitle = "버밀라"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "chartreux":
-                    resultMessage = "샤트룩스"
-                    labelTitle = ""
+                resultTitle = "AI도 (러시안블루와 )헷갈려 하는 샤트룩스"
+                resultExplain = "청회색의 브리티시 쇼트헤어 또는 러시안 블루와 닮아 혼동되는 경우가 많은데, 러시안 블루의 경우 눈 색, 머리모양, 체형으로 쉽게 구별할 수 있다. 러시안 블루는 연녹색~녹색계열의 눈을 가지고 있으며 머리 모양이 몸통에 비해 갸름하고 이마부분은 평평하다. 몸통이 길고 늘씬하며 근육질이다."
+                resultSource ="나무위키"
+                resultSearch = "https://terms.naver.com/entry.naver?docId=1319011&cid=40942&categoryId=32624"
                     break;
                 case "colorpoint shorthair":
-                    resultMessage = "칼라포인트 숏헤어"
+                resultTitle = "칼라포인트 숏헤어"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "cornish rex":
-                    resultMessage = "코니시 렉스"
+                resultTitle = "코니시 렉스"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "cymric cat":
-                    resultMessage = "킴릭"
+                resultTitle = "킴릭"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "devon rex":
-                    resultMessage = "데본 렉스"
+                resultTitle = "데본 렉스"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "egyptian mau":
-                    resultMessage = "이집션 마우"
+                resultTitle = "이집션 마우"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "exotic shorthair":
-                    resultMessage = "이그조틱(엑조틱) 숏헤어"
+                resultTitle = "이그조틱(엑조틱) 숏헤어"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "havana brown cat":
-                    resultMessage = "하바나 브라운"
+                resultTitle = "하바나 브라운"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "himalayan cat":
-                    resultMessage = "히말라얀 고양이"
+                resultTitle = "히말라얀 고양이"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "javanese cat":
-                    resultMessage = "자바니즈"
+                resultTitle = "자바니즈"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "korat":
-                    resultMessage = "코랏"
+                resultTitle = "코랏"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "maine coon":
-                    resultMessage = "메인쿤"
+                resultTitle = "메인쿤"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "manx cat":
-                    resultMessage = "맹크스"
+                resultTitle = "맹크스"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "munchkin cat":
-                    resultMessage = "먼치킨"
+                resultTitle = "숏다리 먼치킨"
+                resultExplain = "견종 닥스훈트나 웰시 코기처럼 팔다리가 짧고 허리가 긴 고양이 종. 정식 명칭은 숏레그 먼치킨(Standard munchkin cat)이다. 무게는 2.7~4kg 정도이다. 다리가 긴 종인 롱레그 먼치킨(Non-standard munchkin cat)이 있다고도 하나, 국제 고양이 협회(TICA)의 기준에는 숏레그만 인정하고 있다. 애초에 다리가 짧은 종을 말하는 거라 다리가 긴 먼치킨은 말이 맞지 않는다. 1995년 국제고양이협회는 먼치킨을 고양이 품종으로 받아들였지만, 많은 동물단체 사람들은 먼치킨의 짧은 다리를 왜소증이라 보며 그런 왜소증품종을 기르는 것이 기형을 부추기는 비윤리적인 행위라고 주장한다. 스코티쉬 폴드와 함께 논란이 가장 많은 품종이다."
+                resultSource ="나무위키"
+                resultSearch = "https://terms.naver.com/entry.naver?docId=5874386&cid=40942&categoryId=32624"
                     break;
                 case "nebelung cat":
-                    resultMessage = "니벨룽"
+                resultTitle = "니벨룽"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "norwegian forest cat":
-                    resultMessage = "노르웨이숲 고양이"
+                resultTitle = "노르웨이숲 고양이"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "ocicat":
-                    resultMessage = "오시캣"
+                resultTitle = "오시캣"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "oriental shorthair cat":
-                    resultMessage = "오리엔탈 숏헤어"
+                resultTitle = "오리엔탈 숏헤어"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "persian cat":
-                    resultMessage = "페르시안"
+                resultTitle = "페르시안"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "peterbald cat":
-                    resultMessage = "피터볼드"
+                resultTitle = "피터볼드"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "pixie bob cat":
-                    resultMessage = "픽시 밥"
+                resultTitle = "픽시 밥"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "ragamuffin":
-                    resultMessage = "라가머핀"
+                resultTitle = "라가머핀"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "ragdoll":
-                    resultMessage = "래그돌(랙돌)"
+                resultTitle = "래그돌(랙돌)"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "russian blue":
-                    resultMessage = "러시안 블루"
+                resultTitle = "러시안 블루"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "savannah cat":
-                    resultMessage = "사바나캣"
+                resultTitle = "사바나캣"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "scottish fold":
-                    resultMessage = "스코티쉬 폴드"
+                resultTitle = "스코티쉬 폴드"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "selkirk rex":
-                    resultMessage = "셀커크 렉스"
+                resultTitle = "셀커크 렉스"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "siamese cat":
-                    resultMessage = "샤미즈"
+                resultTitle = "샤미즈"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "siberian cat":
-                    resultMessage = "시베리안 포레스트"
+                resultTitle = "시베리안 포레스트"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "singapura cat":
-                    resultMessage = "싱가푸라"
+                resultTitle = "싱가푸라"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "snowshoe cat":
-                    resultMessage = "스노우슈"
+                resultTitle = "스노우슈"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "somali cat":
-                    resultMessage = "소말리"
+                resultTitle = "소말리"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "sphynx":
-                    resultMessage = "스핑크스"
+                resultTitle = "스핑크스"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "tonkinese cat":
-                    resultMessage = "통키니즈"
+                resultTitle = "통키니즈"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "toyger cat":
-                    resultMessage = "토이거"
+                resultTitle = "토이거"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "turkish angora":
-                    resultMessage = "터키쉬앙골라"
+                resultTitle = "터키쉬앙골라"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "turkish van cat":
-                    resultMessage = "터키시 반"
+                resultTitle = "터키시 반"
+                resultExplain = ""
+                resultSource =""
+                resultSearch = ""
                     break;
                 case "korean shorthair":
-                    resultMessage = "코리안숏헤어"
+                resultTitle = "토종 K-냥이 코리안숏헤어"
+                resultExplain = "대한민국에 서식하는 포유류 식육목에 속하는 토착 고양이. 8세기 경 한반도에 유입되어 정착한 동물이다. 흔히 코리안 쇼트헤어, 줄여서 코숏이라고도 부르는데, 한국의 토착 고양이들은 품종에 관한 관리, 개량, 분류 등을 당한 적이 없어서 공식적인 품종이 없고, 미국(아메리카)의 아메리칸 쇼트헤어에서 따온 일종의 은어이다. 때문에 우리나라 말인 '참고양이'로 부르자는 주장도 있다."
+                resultSource ="나무위키"
+                resultSearch = "https://terms.naver.com/search.naver?query=%EC%BD%94%EB%A6%AC%EC%95%88+%EC%88%8F%ED%97%A4%EC%96%B4&searchType=&dicType=&subject="
                     break;
                 default:
-                    resultMessage = "알 수 없음";
+                resultTitle = "알 수 없음"
+                resultExplain = "고양이 사진이 맞다냥?"
+                resultSource ="개발자"
+                resultSearch = "/"
             }
-            $('.result-message').html(resultMessage);
+            var title = "<div class = 'fs-4 mt-1'>" + resultTitle + "</div>"
+            var explain = "<div class = 'text-left mt-1'>" + resultExplain + " [" + resultSource + "]" + "</div>"
+            var search = "<a href = &quot;" + resultSearch + "&quot;>네이버 지식백과</a>"
+            $('.result-message').html(title + explain + search);
             
             var barWidth;
             for (let i = 0; i < 5/*maxPredictions*/; i++) {
@@ -464,8 +606,9 @@
     </script>
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <div class="addthis_inline_share_toolbox"></div>
-
+    <div class="my-2">
+        <div class="addthis_inline_share_toolbox"></div>
+    </div>
 </body>
 <!-- Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
