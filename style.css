@@ -2,8 +2,6 @@ body {
     font-family: 'Single Day', cursive;
     background-color: #eeeeee;}
 
-
-
 .file-upload {
     background-color: #ffffff;
     width: 600px;
@@ -133,4 +131,11 @@ body {
 
 .hide-loader{
     display:none;
+}
+
+.try-again-btn {
+    color: #eeeeee;
+    border-radius: 40px;
+    border: solid 1.5px #35465d;
+    background-color: #35465d;
 }
