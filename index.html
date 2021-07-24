@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script defer type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60f2d8c21919506b"></script>
@@ -19,18 +22,15 @@
 
 <body>
     <h1 class="text-center mt-5">고양이 족보 테스트</h1>
-    <h2 class="text-center my-3">인공지능으로 알아보는 고양이 족보 테스트</h2>
+    <h2 class="text-center my-4">인공지능으로 알아보는 고양이 족보 테스트</h2>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <div class="addthis_inline_share_toolbox"></div>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <div class="file-upload">
-        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add
-            Image</button>
-
         <div class="image-upload-wrap">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
-                <h3>Drag and drop a file or select add Image</h3>
+                <h3>고양이 사진을 찍거나 눌러서 업로드하냥!</h3>
             </div>
         </div>
         <div class="file-upload-content">
@@ -39,7 +39,7 @@
             <p class="result-message"></p>
             <div id="label-container"></div>
             <div class="image-title-wrap">
-                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
+                <button type="button" onclick="removeUpload()" class="remove-image">지우고 다시 하기<span
                         class="image-title">Uploaded Image</span></button>
             </div>
         </div>
