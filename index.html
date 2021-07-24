@@ -30,7 +30,7 @@
         <div class="image-upload-wrap">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
-                <h3>고양이 사진을 찍거나 눌러서 업로드하냥!</h3>
+                <h3>고양이 사진을 찍거나 눌러서 업로드해냥!</h3>
             </div>
         </div>
         <div class="file-upload-content">
@@ -121,42 +121,55 @@
             switch(prediction[0].className){
                 case "abyssinian":
                     resultMessage = "아비시니안"
+                    labelTitle = ""
                     break;
                 case "american Bobtail":
                     resultMessage = "아메리칸 밥테일"
+                    labelTitle = ""
                 break;
                 case "american curl":
                     resultMessage = "아메리칸 컬"
+                    labelTitle = ""
                     break;
                 case "american shorthair":
                     resultMessage = "아메리칸 숏헤어"
+                    labelTitle = ""
                     break;
                 case "american wirehair cat":
                     resultMessage = "아메리칸 와이어헤어"
+                    labelTitle = ""
                     break;
                 case "balinese cat":
                     resultMessage = "발리니즈"
+                    labelTitle = ""
                     break;
                 case "bengal cat":
                     resultMessage = "벵갈"
+                    labelTitle = ""
                     break;
                 case "birman":
                     resultMessage = "버만"
+                    labelTitle = ""
                     break;
                 case "bombay cat":
                     resultMessage = "봄베이 고양이"
+                    labelTitle = ""
                     break;
                 case "british shorthair":
                     resultMessage = "브리티쉬 숏헤어"
+                    labelTitle = ""
                     break;
                 case "burmese cat":
                     resultMessage = "버미즈"
+                    labelTitle = ""
                     break;
                 case "burmilla":
                     resultMessage = "버밀라"
+                    labelTitle = ""
                     break;
                 case "chartreux":
                     resultMessage = "샤트룩스"
+                    labelTitle = ""
                     break;
                 case "colorpoint shorthair":
                     resultMessage = "칼라포인트 숏헤어"
@@ -273,11 +286,181 @@
                     resultMessage = "알 수 없음";
             }
             $('.result-message').html(resultMessage);
-            for (let i = 0; i < 4; i++) {
+            
+            var barWidth;
+            for (let i = 0; i < 5/*maxPredictions*/; i++) {
+                if (prediction[i].probability.toFixed(2) > 0.1) {
+                    barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+                } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                    barWidth = "5%"
+                } else {
+                    barWidth = "1%"
+                }
+                var labelTitle;
+                switch(prediction[i].className){
+                    case "abyssinian":
+                        labelTitle = "아바시니안"
+                        break;
+                    case "american Bobtail":
+                        labelTitle = "아메리칸 밥테일"
+                    break;
+                    case "american curl":
+                        labelTitle = "아메리칸 컬"
+                        break;
+                    case "american shorthair":
+                        labelTitle = "아메리칸 숏헤어"
+                        break;
+                    case "american wirehair cat":
+                        labelTitle = "아메리칸 와이어헤어"
+                        break;
+                    case "balinese cat":
+                        labelTitle = "발리니즈"
+                        break;
+                    case "bengal cat":
+                        labelTitle = "벵갈"
+                        break;
+                    case "birman":
+                        labelTitle = "버만"
+                        break;
+                    case "bombay cat":
+                        labelTitle = "봄베이 고양이"
+                        break;
+                    case "british shorthair":
+                        labelTitle = "브리티쉬 숏헤어"
+                        break;
+                    case "burmese cat":
+                        labelTitle = "버미즈"
+                        break;
+                    case "burmilla":
+                        labelTitle = "버밀라"
+                        break;
+                    case "chartreux":
+                        labelTitle = "샤트룩스"
+                        break;
+                    case "colorpoint shorthair":
+                        labelTitle = "칼라포인트 숏헤어"
+                        break;
+                    case "cornish rex":
+                    labelTitle = "코니시 렉스"
+                        break;
+                    case "cymric cat":
+                    labelTitle = "킴릭"
+                        break;
+                    case "devon rex":
+                    labelTitle = "데본 렉스"
+                        break;
+                    case "egyptian mau":
+                    labelTitle = "이집션 마우"
+                        break;
+                    case "exotic shorthair":
+                    labelTitle = "이그조틱(엑조틱) 숏헤어"
+                        break;
+                    case "havana brown cat":
+                    labelTitle = "하바나 브라운"
+                        break;
+                    case "himalayan cat":
+                    labelTitle = "히말라얀 고양이"
+                        break;
+                    case "javanese cat":
+                    labelTitle = "자바니즈"
+                        break;
+                    case "korat":
+                    labelTitle = "코랏"
+                        break;
+                    case "maine coon":
+                    labelTitle = "메인쿤"
+                        break;
+                    case "manx cat":
+                    labelTitle = "맹크스"
+                        break;
+                    case "munchkin cat":
+                    labelTitle = "먼치킨"
+                        break;
+                    case "nebelung cat":
+                    labelTitle = "니벨룽"
+                        break;
+                    case "norwegian forest cat":
+                    labelTitle = "노르웨이숲 고양이"
+                        break;
+                    case "ocicat":
+                    labelTitle = "오시캣"
+                        break;
+                    case "oriental shorthair cat":
+                    labelTitle = "오리엔탈 숏헤어"
+                        break;
+                    case "persian cat":
+                    labelTitle = "페르시안"
+                        break;
+                    case "peterbald cat":
+                    labelTitle = "피터볼드"
+                        break;
+                    case "pixie bob cat":
+                    labelTitle = "픽시 밥"
+                        break;
+                    case "ragamuffin":
+                    labelTitle = "라가머핀"
+                        break;
+                    case "ragdoll":
+                    labelTitle = "래그돌(랙돌)"
+                        break;
+                    case "russian blue":
+                    labelTitle = "러시안 블루"
+                        break;
+                    case "savannah cat":
+                    labelTitle = "사바나캣"
+                        break;
+                    case "scottish fold":
+                    labelTitle = "스코티쉬 폴드"
+                        break;
+                    case "selkirk rex":
+                    labelTitle = "셀커크 렉스"
+                        break;
+                    case "siamese cat":
+                    labelTitle = "샤미즈"
+                        break;
+                    case "siberian cat":
+                    labelTitle = "시베리안 포레스트"
+                        break;
+                    case "singapura cat":
+                    labelTitle = "싱가푸라"
+                        break;
+                    case "snowshoe cat":
+                    labelTitle = "스노우슈"
+                        break;
+                    case "somali cat":
+                    labelTitle = "소말리"
+                        break;
+                    case "sphynx":
+                    labelTitle = "스핑크스"
+                        break;
+                    case "tonkinese cat":
+                    labelTitle = "통키니즈"
+                        break;
+                    case "toyger cat":
+                    labelTitle = "토이거"
+                        break;
+                    case "turkish angora":
+                    labelTitle = "터키쉬앙골라"
+                        break;
+                    case "turkish van cat":
+                    labelTitle = "터키시 반"
+                        break;
+                    case "korean shorthair":
+                    labelTitle = "코리안숏헤어"
+                        break;
+                    default:
+                    labelTitle = "알 수 없음";
+            }
+
+                var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
+                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "bar-box'></div><div class='d-flex justify-content-center align-items-center bg-secondary " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+                labelContainer.childNodes[i].innerHTML = label + bar;
+            }
+            /*for (let i = 0; i < 4; i++) {
                 const classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
                 labelContainer.childNodes[i].innerHTML = classPrediction;
-            }
+            }*/
         }
     </script>
 </body>
