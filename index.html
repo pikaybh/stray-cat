@@ -34,11 +34,11 @@
         </div>
         <div class="file-upload-content" style="max-width: 100%;">
             <img class="file-upload-image" id="cat-image" src="#" alt="your image" />
-            <div class="loader" id="loader"></div>
+            <div class="loader" id="loader">AI가 고양이 사진을 분석 중입니다...</div>
             <p class="result-message"></p>
             <div id="label-container"></div>
             <div class="pt-3 image-title-wrap">
-                <button type="button p-2" class="try-again-btn" onclick="gaReload()">
+                <button type="button p-2" class="try-again-btn" onclick="location.replace(location.href)">
                     <span class="try-again-text">다른 사진으로 재시도</span>
                 </button>
             </div>
@@ -603,34 +603,6 @@
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }*/
-        }
-    </script>
-    <script>
-        function gaReload() {
-            gtag('event', '다른 사진으로 재시도', {
-                'event_category': '다른 사진으로 재시도'
-            });
-        }
-        function gaReload1() {
-            gtag('event', '다른 사진으로 재시도 1차', {
-                'event_category': '다른 사진으로 재시도'
-            });
-        }
-        function gaReload2() {
-            gtag('event', '다른 사진으로 재시도 2차', {
-                'event_category': '다른 사진으로 재시도'
-            });
-        }
-        function gaReload3() {
-            gtag('event', '다른 사진으로 재시도 3차', {
-                'event_category': '다른 사진으로 재시도'
-            });
-        }
-        function gaReload4() {
-            gtag('event', '다른 사진으로 재시도 4차', {
-                'event_category': '다른 사진으로 재시도'
-            });
-            window.location.reload();
         }
     </script>
 
