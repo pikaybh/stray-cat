@@ -23,17 +23,16 @@
 <body>
     <h1 class="text-center mt-5">고양이 족보 테스트</h1>
     <h2 class="text-center my-4">인공지능으로 알아보는 고양이 족보 테스트</h2>
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <div class="addthis_inline_share_toolbox"></div>
+    
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <div class="file-upload">
+    <div class="file-upload" style="max-width: 100%;">
         <div class="image-upload-wrap">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
                 <h3>고양이 사진을 찍거나 눌러서 업로드해냥!</h3>
             </div>
         </div>
-        <div class="file-upload-content">
+        <div class="file-upload-content" style="max-width: 100%;">
             <img class="file-upload-image" id="cat-image" src="#" alt="your image" />
             <div class="loader" id="loader"></div>
             <p class="result-message"></p>
@@ -463,6 +462,10 @@
             }*/
         }
     </script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <div class="addthis_inline_share_toolbox"></div>
+
 </body>
 <!-- Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
