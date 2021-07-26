@@ -598,48 +598,45 @@
 
     <div class="py-3"></div>
 
-    <a id="create-kakao-link-btn" href="javascript:;">
-        <img
-          src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-        />
-      </a>
-      <script type="text/javascript">
-        Kakao.Link.createDefaultButton({
-          container: '#create-kakao-link-btn',
-          objectType: 'feed',
-          content: {
-            title: '딸기 치즈 케익',
-            description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
-            imageUrl:
-              'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-            link: {
-              mobileWebUrl: 'https://developers.kakao.com',
-              webUrl: 'https://developers.kakao.com',
-            },
-          },
-          social: {
-            likeCount: 286,
-            commentCount: 45,
-            sharedCount: 845,
-          },
-          buttons: [
-            {
-              title: '웹으로 보기',
-              link: {
-                mobileWebUrl: 'https://developers.kakao.com',
-                webUrl: 'https://developers.kakao.com',
-              },
-            },
-            {
-              title: '앱으로 보기',
-              link: {
-                mobileWebUrl: 'https://developers.kakao.com',
-                webUrl: 'https://developers.kakao.com',
-              },
-            },
-          ],
-        })
-      </script>
+    <button type="button" id="sh-link">주소복사</button>
+    <script>
+        $(document).on("click", "#sh-link", function(e) { // 링크복사 시 화면 크기 고정
+            $('html').find('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no');
+            var html = "<input id='clip_target' type='text' value='' style='position:absolute;top:-9999em;'/>";
+            $(this).append(html);
+            var input_clip = document.getElementById("clip_target"); //현재 url 가져오기 
+            var _url = $(location).attr('href'); 
+            $("#clip_target").val(_url); 
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
+                var editable = input_clip.contentEditable; 
+                var readOnly = input_clip.readOnly; 
+                input_clip.contentEditable = true; 
+                input_clip.readOnly = false; 
+                var range = document.createRange(); 
+                range.selectNodeContents(input_clip); 
+                var selection = window.getSelection(); 
+                selection.removeAllRanges(); 
+                selection.addRange(range); 
+                input_clip.setSelectionRange(0, 999999); 
+                input_clip.contentEditable = editable; 
+                input_clip.readOnly = readOnly; } 
+                else { 
+                    input_clip.select(); 
+                } try { 
+                    var successful = document.execCommand('copy'); 
+                    input_clip.blur(); 
+                    if (successful) { 
+                        alert("URL이 복사 되었습니다. 원하시는 곳에 붙여넣기 해 주세요."); // 링크복사 시 화면 크기 고정 
+                        $('html').find('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes'); 
+                    } else { 
+                        alert('이 브라우저는 지원하지 않습니다.'); 
+                    } 
+                } catch (err) { 
+                    alert('이 브라우저는 지원하지 않습니다.'); 
+                } 
+            }); //클립보드 복사
+    /*출처: https://grahams.tistory.com/273 [MakeDesire]*/
+    </script>
 
     <!--footer-->
     <footer>
@@ -653,6 +650,7 @@
         </div>
     </footer>
 </body>
+<!--https://grahams.tistory.com/273 [MakeDesire]-->
 <!-- Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
