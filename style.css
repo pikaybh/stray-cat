@@ -148,3 +148,11 @@ footer{
 .hide-item {
     display:none;
 }
+
+.copy-link-btn{
+    border-radius: 8px;
+    border: solid 1.5px #35465d70;
+    height: 50px;
+    width: 280px;
+    background-color: rgba(128, 128, 128, 0.3);
+}
