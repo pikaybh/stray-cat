@@ -29,6 +29,12 @@
 </head>
 
 <body>
+    window.navigator.share({
+        title: '고양이 족보', // 공유될 제목
+        text: '당신의 고양이 사진을 올려 족보를 물어보세요!', // 공유될 설명
+        url: 'https://jokbo.netlify.app/', // 공유될 URL
+        files: [], // 공유할 파일 배열
+    });
     <!--
     !--facebook SDK--
     <div id="fb-root"></div>
