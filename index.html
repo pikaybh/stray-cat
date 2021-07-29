@@ -30,11 +30,10 @@
 </head>
 
 <body>
-    <!--
-    !--facebook SDK--
+    <!--facebook SDK-->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v11.0" nonce="IMXQZp69"></script>
-
+<!--
     !--twitter SDK--
     <script>window.twttr = (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0],
@@ -137,7 +136,7 @@
             <div class="addthis_inline_share_toolbox"></div>
         </div>
         <!--share buttons-->
-        <div class="d-flex justify-content-center">
+        <div class="w-auto d-flex justify-content-center">
             <div class="share-dialog">
                 <header>
                     <h3 class="dialog-title">공유하기</h3>
@@ -146,7 +145,7 @@
                         </svg></button>
                 </header>
                 <div class="targets">
-                    <a class="button">
+                    <a class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjokbo.netlify.app%2F&amp;src=sdkpreparse" target="_blank">
                         <svg>
                             <use href="#facebook"></use>
                         </svg>
@@ -175,7 +174,7 @@
                     </a>
                 </div>
                 <div class="link">
-                    <div class="pen-url">https://jokbo.netlify.app/</div>
+                    <div class="link-url">https://jokbo.netlify.app/</div>
                     <button class="copy-link">Copy Link</button>
                 </div>
             </div>
