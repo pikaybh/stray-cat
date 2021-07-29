@@ -55,11 +55,13 @@
             return t;
         }(document, "script", "twitter-wjs"));</script>
 
-    <!--kakaostory SDK--
+    <!--kakaostory SDK-->
     <script>
         window.kakaoAsyncInit = function () {
             Kakao.Story.createShareButton({
                 container: '#kakaostory-share-button',
+                url: 'https://jokbo.netlify.app/cat-jokbo/'
+                text: '사진으로 당신의 고양이의 족보를 알아보아요! #AI #인공지능 #고양이 #족보 :)'
             });
         };
 
@@ -71,7 +73,6 @@
             fjs.parentNode.insertBefore(js, fjs);
         })(document, 'script', 'kakao-js-sdk');
     </script>
-    -->
 
     <h1 class="text-center mt-5">고양이 족보 테스트</h1>
     <h2 class="text-center mt-4">인공지능으로 알아보는 고양이 족보</h2>
@@ -123,17 +124,14 @@
                         </svg>
                         <span>Twitter</span>
                     </a>
-    
-                    <a class="button">
-                        <svg>
-                            <use href="#linkedin"></use>
-                        </svg>
-                        <span>LinkedIn</span>
-                    </a>
 
                     <a class="button">
                         <svg enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m12 1c-6.627 0-12 4.208-12 9.399 0 3.356 2.246 6.301 5.625 7.963-1.678 5.749-2.664 6.123 4.244 1.287.692.097 1.404.148 2.131.148 6.627 0 12-4.208 12-9.399 0-5.19-5.373-9.398-12-9.398z" fill="#3e2723"/><g fill="#ffeb3b"><path d="m10.384 8.27c-.317-.893-1.529-.894-1.845-.001-.984 3.052-2.302 4.935-1.492 5.306 1.078.489 1.101-.611 1.359-1.1h2.111c.257.487.282 1.588 1.359 1.1.813-.371-.489-2.195-1.492-5.305zm-1.614 2.987.692-1.951.691 1.951z"/><path d="m5.365 13.68c-1.198 0-.49-1.657-.692-4.742-.429-.074-1.76.297-1.76-.673 0-.371.305-.673.679-.673 2.518.18 4.224-.47 4.224.673 0 .987-1.275.59-1.76.673-.2 3.075.505 4.742-.691 4.742z"/><path d="m13.154 13.579c-1.159 0-.454-1.565-.663-5.301 0-.91 1.413-.909 1.413 0v4.04c.669.089 2.135-.33 2.135.63-.001 1.007-1.576.503-2.885.631z"/><path d="m19.556 13.38-1.624-2.137-.24.239v1.5c0 .38-.31.688-.693.688-1.203 0-.482-1.732-.692-5.392 0-.379.31-.688.692-.688 1.045 0 .594 1.478.692 2.166 1.96-1.873 1.913-2.072 2.316-2.072.556 0 .897.691.527 1.058l-1.578 1.567 1.704 2.243c.556.725-.555 1.556-1.104.828z"/></g></svg>
                         <span>KakaoTalk</span>
+                    </a>
+
+                    <a href="" class="button" id="kakaostory-share-button">
+                        <span>KakaoStory</span>
                     </a>
 
                     <a class="button">
@@ -181,13 +179,6 @@
                         stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
-                    </symbol>
-    
-                    <symbol id="linkedin" viewBox="0 0 24 24" fill="#0077B5" stroke="#0077B5" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
                     </symbol>
     
                     <symbol id="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
