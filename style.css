@@ -29,13 +29,13 @@ body {
 
 .image-upload-wrap {
     margin-top: 20px;
-    border: 4px dashed #777777;
+    border: 4px dashed #efefef;
     position: relative;
 }
 
 .image-dropping,
 .image-upload-wrap:hover {
-    background-color: #777777;
+    background-color: #efefef;
     border: 4px dashed #ffffff;
 }
 
@@ -51,7 +51,7 @@ body {
 .drag-text h3 {
     font-weight: 100;
     text-transform: uppercase;
-    color: #efefef;
+    color: #777777;
     padding: 60px 0;
 }
 
