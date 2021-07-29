@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    <button onclick="shareButton.addEventListener()">share</button>
+    <a href="share:?title=Example%20Page&amp;url=https://example.com/page">공유하기</a>
     <script>
         shareButton.addEventListener("click", async () => {
                 try {
@@ -43,6 +43,10 @@
                     console.log("공유 실패");
                 }
             });
+            if (typeof navigator.share === "undefined") {
+            // 공유하기 버튼을 지원하지 않는 경우에 대한 폴백 처리
+            shareButton.hidden = true;
+            }
     </script>
     <!--
     !--facebook SDK--
