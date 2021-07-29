@@ -6,7 +6,7 @@ shareButton.addEventListener('click', event => {
     if (navigator.share) {
         navigator.share({
             title: 'AI 고양이 족보',
-            url: 'https://jokbo.netlify.app/'
+            url: 'https://jokbo.netlify.app/cat-jokbo/'
         }).then(() => {
             console.log('Thanks for sharing!');
         })
