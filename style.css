@@ -204,7 +204,7 @@ header {
 }
 
 .close-button svg {
-    margin-right: 0;
+    margin-right: 5px;
 }
 
 .link {

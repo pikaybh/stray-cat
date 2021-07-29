@@ -19,3 +19,18 @@ shareButton.addEventListener('click', event => {
 closeButton.addEventListener('click', event => {
     shareDialog.classList.remove('is-open');
 });
+
+function copyFunction() {
+    /* Get the text field */
+    var copyText = document.getElementById("link-url");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    alert("url이 복사되었습니다. : " + copyText.value);
+}
