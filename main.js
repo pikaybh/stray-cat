@@ -1,6 +1,7 @@
 const shareButton = document.querySelector('.share-button');
 const shareDialog = document.querySelector('.share-dialog');
 const closeButton = document.querySelector('.close-button');
+const copyLink = document.querySelector('.copy-link');
 
 shareButton.addEventListener('click', event => {
     if (navigator.share) {
@@ -18,6 +19,15 @@ shareButton.addEventListener('click', event => {
 
 closeButton.addEventListener('click', event => {
     shareDialog.classList.remove('is-open');
+});
+
+copyLink.addEventListener('click', event => {
+    document.execCommand("copy");
+    if(document.getElementById("link-url")){
+        copyText.select();
+        copyText.setSelectionRange(0, 250);
+        alert("url이 복사되었습니다. : " + copyText.value);
+    }
 });
 
 function copyFunction() {
