@@ -158,7 +158,7 @@ footer{
 }
 
 *, *::before, *::after {
-    box-sizing: inherit;
+    box-sizing: 0;
     padding: 0;
     margin: 0;
 }
