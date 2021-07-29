@@ -3,6 +3,20 @@ const shareDialog = document.querySelector('.share-dialog');
 const closeButton = document.querySelector('.close-button');
 const copyLink = document.querySelector('.copy-link');
 
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
+}
+
 shareButton.addEventListener('click', event => {
     if (navigator.share) {
         navigator.share({
@@ -23,7 +37,7 @@ closeButton.addEventListener('click', event => {
 
 copyLink.addEventListener('click', event => {
     document.execCommand("copy");
-    if(document.getElementById("link-url")){
+    if (document.getElementById("link-url")) {
         copyText.select();
         copyText.setSelectionRange(0, 250);
         alert("url이 복사되었습니다. : " + copyText.value);
