@@ -180,6 +180,7 @@ svg {
 button, .button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     height: auto;
     padding-top: 8px;
     padding-bottom: 8px;
