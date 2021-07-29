@@ -29,24 +29,29 @@
 </head>
 
 <body>
-    <a href="share:?title=Example%20Page&amp;url=https://example.com/page">공유하기</a>
+    <Text onPress={() => onShare()}>공유하기</Text>
     <script>
-        shareButton.addEventListener("click", async () => {
-                try {
-                    await navigator.share({
-                        title: "재그지그의 개발 블로그",
-                        text: "디자인과 UI, UX에 관심이 많은 주니어 웹 프론트엔드 개발자입니다.",
-                        url: "https://wormwlrm.github.io",
-                    });
-                    console.log("공유 성공");
-                } catch (e) {
-                    console.log("공유 실패");
-                }
-            });
-            if (typeof navigator.share === "undefined") {
-            // 공유하기 버튼을 지원하지 않는 경우에 대한 폴백 처리
-            shareButton.hidden = true;
-            }
+        const onShare = async () => { 
+            try { 
+                const result = await Share.share( { 
+                    message: '공유에 보이는 메세지 이거를 복붙할 수도 있엉!', 
+                } ); if (result.action === Share.sharedAction) { 
+                    if (result.activityType) { 
+                        console.log('activityType!'); 
+                    } else { 
+                        console.log('Share!'); 
+                    } 
+                } else if (result.action === Share.dismissedAction) { 
+                    console.log('dismissed'); 
+                } 
+            } catch (error) {
+                alert(error.message); 
+            } 
+        };
+        const link = Platform.OS === 'ios' ? 'https://apps.apple.com/us/app/%EB%B3%B4%EB%8B%A5-%EB%82%B4-%EB%B3%B4%ED%97%98%EC%A0%90%EC%88%98-%EC%A7%84%EB%8B%A8-%EC%83%88%EB%8A%94-%EB%B3%B4%ED%97%98%EB%A3%8C-%ED%99%95%EC%9D%B8/id1447862053' : 'https://play.google.com/store/apps/details?id=com.mrp.doctor&hl=ko';
+        const result = await Share.share( { 
+            message: link, 
+        } );
     </script>
     <!--
     !--facebook SDK--
